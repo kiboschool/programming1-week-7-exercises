@@ -1,4 +1,4 @@
-# Read Binary File
+# Binary File Info
 
 In this exercise, you'll practice working with binary files, that aren't encoded text.
 
@@ -38,3 +38,5 @@ Your program should print out the type of file it detects, or "Unknown file type
 ## Further Reading
 
 See more filetype magic numbers at https://en.wikipedia.org/wiki/Magic_number_(programming)#In_files)
+
+After you've finished the project, take a look at the library [filetype.py](https://github.com/h2non/filetype.py). It does the same kind of filetype checking that you implemented, but for a wide variety of types of files. Do you spot any similarities or differences between your code and the library code?
