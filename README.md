@@ -5,7 +5,7 @@ In this exercise, you'll practice working with binary files, that aren't encoded
 Write a program that accepts the name of a file from standard input, and prints out the following information about that file:
 
 - The name of the file (as it was entered to the program)
-- How large is the file (format specified below)
+- How large file is (format specified below)
 - The type of the file, by checking for common patterns in the bytes (specified
     below)
 
