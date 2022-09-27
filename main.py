@@ -19,7 +19,6 @@ def file_info(filename):
     else:
         return "TODO: implement file info"
 
-
 # Run the fileinfo function on a provided filename
 def main():
     filename = input("Enter a file name please: ")
