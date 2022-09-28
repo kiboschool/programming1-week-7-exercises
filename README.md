@@ -5,11 +5,11 @@ In this exercise, you'll practice working with binary files, that aren't encoded
 Write a program that accepts the name of a file from standard input, and prints out the following information about that file:
 
 - The name of the file (as it was entered to the program)
-- How large is the file, in a nice format (specified below)
+- How large is the file (format specified below)
 - The type of the file, by checking for common patterns in the bytes (specified
     below)
 
-## Nice filesize format
+## Filesize format
 
 It's nice to use different units to convey the size, instead of having lots of digits.
 
@@ -35,6 +35,25 @@ Here are the ones that your program needs to be able to detect, and their byte p
 - JPEG image files begin with 0xFF 0xD8 and end with 0xFF 0xD9
 
 Your program should print out the type of file it detects, or "Unknown file type" if none of these types match.
+
+## Expected Results
+
+Missing file:
+```sh
+$ python main.py
+Enter a file name please: assets/does-not-exist.txt
+Error: File [assets/does-not-exist.txt] does not exist
+```
+
+PDF:
+```sh
+python main.py
+Enter a file name please: assets/test01.pdf
+File Statistics:
+File Name: assets/test01.pdf
+File Size: 33.88 KB
+File Type: PDF
+ ```
 
 ## Testing
 
