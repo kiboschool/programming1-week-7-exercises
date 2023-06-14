@@ -5,7 +5,7 @@ in class.  Each exercise is required.
 
 ## Required Exercises
 
-There are three exercises to complete:
+There are two exercises to complete:
 
 1. **binary-file-info**: Write a program that accepts the name of a binary file from 
 standard input, and prints out the name, size, and type of the file.
