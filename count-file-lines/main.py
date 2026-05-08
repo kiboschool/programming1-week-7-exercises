@@ -1,10 +1,20 @@
-# TODO: Import a module to help you with files
+import os
 
 def show_line_counts():
-    # TODO: 
-    # get filename from the user and, optionally, a lookup value
-    # get the line count from "file_line_count" and print results
-    pass
+    filename = input("Please enter a file name or path for line counting: ")
+
+    lookup_value = input(
+        "Optional: Please enter a value for lookup - Press [Enter] for no value: "
+    )
+
+    count = line_count(filename, lookup_value)
+
+    if count == -1:
+        print("Error: Please enter a valid file name")
+    elif lookup_value == "":
+        print(f"Number of lines in file: {count}")
+    else:
+        print(f"Number of lines containing [{lookup_value}] is: {count}")
 
 def line_count(filename: str, lookup_value: str) -> int:
     """
@@ -15,10 +25,22 @@ def line_count(filename: str, lookup_value: str) -> int:
     :param: lookup_value: string value to lookup for within the file
     :return: int number of lines matching lookup value, or -1
     """
-    pass
+    if not os.path.exists(filename):
+        return -1
 
+    count = 0
 
+    with open(filename, "r") as f:
+        for line in f:
+
+            # No lookup value → count everything
+            if lookup_value == "":
+                count += 1
+
+            # Lookup value exists → only count matching lines
+            elif lookup_value in line:
+                count += 1
+    return count
 
 if __name__ == "__main__":
-    # TODO: Call function here
-    pass
+    show_line_counts()
