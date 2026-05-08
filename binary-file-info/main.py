@@ -17,8 +17,47 @@ def file_info(filename):
     if not os.path.isfile(filename):
         return f"Error: File [{filename}] does not exist"
     else:
-        return "TODO: implement file info"
+        size = os.path.getsize(filename)
+        # Convert filesize
+        if size >= GB:
+            readable_size = f"{round(size / GB, 2)} GB"
 
+        elif size >= MB:
+            readable_size = f"{round(size / MB, 2)} MB"
+
+        elif size >= KB:
+            readable_size = f"{round(size / KB, 2)} KB"
+
+        else:
+            readable_size = f"{size} B"
+
+        # Read binary data
+        with open(filename, "rb") as f:
+            data = f.read()
+
+        # Detect file type
+        if data.startswith(pdf):
+            file_type = "PDF"
+
+        elif data.startswith(gif):
+            file_type = "GIF"
+
+        elif data.startswith(png):
+            file_type = "PNG"
+
+        elif data.startswith(utf8_bom):
+            file_type = "UTF-8 Text"
+
+        elif data.startswith(jpeg_start) and data.endswith(jpeg_end):
+            file_type = "JPEG"
+
+        else:
+            file_type = "Unknown file type"
+
+        return f"""File Statistics:
+        File Name: {filename}
+        File Size: {readable_size}
+        File Type: {file_type}"""
 
 # Run the fileinfo function on a provided filename
 def main():
